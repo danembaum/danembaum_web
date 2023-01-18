@@ -1,0 +1,19 @@
+{% extends 'galeria/base.html'%}
+{% load static %}
+{% block content %}
+            <section class="conteudo">
+                <section class="imagem">
+                    <div class="imagem__conteudo">
+                        <img class="imagem__imagem" src="{{pixelArt.path.url}}">
+                        <div class="imagem__info">
+                            <div class="imagem__texto">
+                                <p class="imagem__titulo">{{pixelArt.name}}</p>
+                                <p class="imagem__texto">{{pixelArt.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+{% endblock %}

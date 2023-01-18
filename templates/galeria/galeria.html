@@ -1,0 +1,33 @@
+{% extends 'galeria/base.html'%}
+{% load static %}
+{% block content %}
+    <section class="galeria">
+        <div class="cards">
+            <ul class="cards__lista">
+                {% if cards %}
+                {% for pixelArt in cards %}
+                <li class="card">
+                    <a href = "{% url 'imagem' pixelArt.id %}">
+                        <img class="card__imagem" src = "{{pixelArt.path.url}}" alt="foto">
+                        <div class="card__info">
+                            <p class="card__titulo">{{pixelArt.name}}</p>
+                            <div class="card__texto">
+                                <p class="card__descricao">CATEGORA: {{pixelArt.category}}</p>
+                                <span>
+                                    <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+                {% else %}
+                    <p>Nenhuma imagem foi encontrada!</p>
+                {% endif %}
+            </ul>
+        </div>
+    </section>
+</div>
+</main>
+
+{% endblock %}
